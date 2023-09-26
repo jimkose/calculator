@@ -67,7 +67,7 @@ operators.forEach(button => {
             operator = event.target.dataset.value;
             return;
         };
-        
+
         lastKey = 'operator';
 
         if (a === null || lastKey === 'equals') {
@@ -99,7 +99,7 @@ clearAll.addEventListener('click', event => {
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', eventu => {
-    if (lastKey !== 'number' || lastKey === null) return;
+    if (lastKey !== 'number' || lastKey === null || a === null) return;
     
     const display = document.querySelector('.display');
     b = display.innerText;
@@ -111,3 +111,19 @@ equals.addEventListener('click', eventu => {
     operator = null;
     lastKey = 'equals';
 });
+
+const decimal = document.querySelector('#decimal');
+decimal.addEventListener('click', event => {
+    const display = document.querySelector('.display');
+    if(display.innerText.includes('.')) return;
+    
+    display.innerText += '.';
+    lastKey = 'number';
+}) 
+
+const sign = document.querySelector('#sign');
+sign.addEventListener('click', event => {
+    if (lastKey !== 'number') return;
+    const display = document.querySelector('.display');
+    display.innerText = -Number(display.innerText);
+})
