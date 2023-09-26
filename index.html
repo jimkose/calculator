@@ -9,34 +9,34 @@
 </head>
 <body>
     <div class="calculator-body">
-        <div class="screen">11111111111</div>
+        <div class="display">0</div>
         <div class="buttons">
             <div class="row">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button class="grey">DEL</button>
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button id="delete" class="grey">DEL</button>
                 <button id="clear-all">CA</button>
             </div>
             <div class="row">
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button class="grey">×</button>
-                <button class="grey">÷</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="grey operator" data-value="*">×</button>
+                <button class="grey operator" data-value="/">÷</button>
             </div>
             <div class="row">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button class="grey">+</button>
-                <button class="grey">–</button>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="grey operator" data-value="+">+</button>
+                <button class="grey operator" data-value="-">–</button>
             </div>
             <div class="row">
-                <button>0</button>
-                <button class="grey">.</button>
-                <button class="grey">(-)</button>
-                <button id="equals">=</button>
+                <button class="number">0</button>
+                <button class="grey" data-value=".">.</button>
+                <button class="grey" data-value="sign">(-)</button>
+                <button id="equals" data-value="=">=</button>
             </div>
         </div>
     </div>
