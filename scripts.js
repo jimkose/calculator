@@ -39,6 +39,10 @@ function wipeDisplay(option) {
 
 }
 
+function getLength(number) {
+    return String(number).length;
+}
+
 // variables used to hold numbers involved in current calculation
 // a is the first number, b is the second number, operator holds the symbol for the operation
 let a = null;
@@ -126,4 +130,15 @@ sign.addEventListener('click', event => {
     if (lastKey !== 'number') return;
     const display = document.querySelector('.display');
     display.innerText = -Number(display.innerText);
+})
+
+const del = document.querySelector('#delete');
+del.addEventListener('click', event => {
+    const display = document.querySelector('.display');
+    if (display.innerText === '0') return;
+    if (display.innerText.length === 1) {
+        display.innerText = 0;
+        return;
+    }
+    display.innerText = display.innerText.slice(0, display.innerText.length - 1);
 })
